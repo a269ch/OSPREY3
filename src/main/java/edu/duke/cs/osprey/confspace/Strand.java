@@ -295,6 +295,9 @@ public class Strand implements Serializable {
 				);
 			}
 		}
+		void addNeighbours(List<String> aminos, List<String> resTypes) {
+			aminos.forEach(amino -> residues.get(amino).setLibraryRotamers(resTypes).addWildTypeRotamers().setContinuous());
+		}
 
 		@Deprecated
 		public ResidueFlex get(int resNum) {
